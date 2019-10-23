@@ -36,7 +36,7 @@ gem 'omniauth-linkedin-oauth2'#, git: 'https://github.com/Devato/omniauth-linked
 #gem 'omniauth-oauth2', '1.3.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'simple_form', '3.5.0'
+gem 'simple_form', '5.0.0'
 
 gem 'cancancan', '2.1.2'
 
