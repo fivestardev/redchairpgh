@@ -31,13 +31,13 @@ class MentorsController < ApplicationController
   
     def update
         respond_to do |format|
-          if @mentor.update(mentor_params)
-            format.html { redirect_to @mentor, notice: 'Mentor was successfully updated.' }
-            format.json { render :show, status: :ok, location: @mentor }
-          else
-            format.html { render :edit, notice: 'Mentor cannot be updated.' }
-            format.json { render json: @mentor.errors, status: :unprocessable_entity }
-          end
+        	if @mentor.update(mentor_params)
+				format.html { redirect_to @mentor, notice: 'Mentor was successfully updated.' }
+				format.json { render :show, status: :ok, location: @mentor }
+        	else
+				format.html { render :edit, notice: 'Mentor cannot be updated.' }
+				format.json { render json: @mentor.errors, status: :unprocessable_entity }
+        	end
         end
     end 
     
@@ -67,8 +67,12 @@ class MentorsController < ApplicationController
       @mentor = Mentor.find(params[:id])
     end
     def mentor_params
+		params['mentor']['specialized_skills'] = params['mentor']['hackimpact'];
+		params['mentor']['mentor_roles'] = params['mentor']['hackrole'];
+		params['mentor']['current_role'] = params['mentor']['hackbackground'];
       params.require(:mentor).permit(:user_id, :is_active, :years_in_field, :years_in_lead, :gender, :comm_frequency, 
-                                     :bio, :motivation, :current_role => [], :specialized_skills => [], :mentor_roles => [])
+                                     :bio, :motivation, :current_role => [],
+									 :specialized_skills => [], :mentor_roles => [])
     end
     
 end

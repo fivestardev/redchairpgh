@@ -1,0 +1,79 @@
+<div class="card">    
+	<div class="card-content">
+		<%= simple_form_for(mentee) do |f| %>
+			<%= f.error_notification %>
+
+			<div class="row form-inputs">
+				<h5>I prefer a mentor that...</h5>
+			</div>
+
+			<div class="row">
+					<div class="col s4">
+						<div class="fx-label">Acts as a</div>
+						<%= f.input_field :mentor_role, collection: Mentee::MENTOR_ROLES, include_blank: true %>
+					</div>
+					<div class="col s4">
+						<div class="fx-label">Identifies as</div>
+						<%= f.input_field :mentor_gender, collection: Mentee::GENDER, include_blank: true %>
+					</div>
+					<div class="col s4">
+						<div class="fx-label">And communicates</div>
+						<%= f.input_field :comm_frequency, collection: Mentee::COMMUNICATION_FREQ, include_blank: true %>
+					</div>
+			</div>
+
+			<div class="row form-inputs">
+				<h5>About Me</h5>
+			</div>
+
+			<div class="row">
+				<div class="col s6">
+					<div class="fx-label">What is your current role?</div>
+					<%= f.input_field :current_role, collection: Mentee::CURR_ROLE, include_blank: true %>
+				</div>
+				<div class="col s6">
+					<div class="fx-label">Years of experience in your field:</div>
+					<%= f.input_field :years_in_field %>
+				</div>
+				<div class="col s6">
+					<div class="fx-label">Do you currently lead a team or group?</div>
+					<%= f.input :lead_team %>
+				</div>
+				<div class="col s6">
+					<div class="fx-label">Most important area of support:</div>
+					<%= f.input_field :skill_1, collection: Mentee::IMPACT, include_blank: true %>
+				</div>
+				<div class="col s6">
+					<div class="fx-label">Second most important area of support:</div>
+					<%= f.input_field :skill_2, collection: Mentee::IMPACT, include_blank: true %>
+				</div>
+				<div class="col s6">
+					<div class="fx-label">Third most important area of support:</div>
+					<%= f.input_field :skill_3, collection: Mentee::IMPACT, include_blank: true %>
+				</div>
+			</div>
+			<%= f.hidden_field :is_active, value: true %>
+			<%= f.hidden_field :user_id, value: current_user.id %>
+
+			<!--non requesting algorithm fields-->          
+			<div class="row">
+				<div>
+					<div class="fx-label">Where do you see yourself in five years?</div>
+					<%= f.input_field :in_five_years, style: 'min-height: 100px' %>
+				</div>
+				<br />
+				<div>
+					<div class="fx-label">
+						Please provide a short bio of your interests,
+						hobbies, and core values outside of your professional environment.
+					</div>
+					<%= f.input_field :bio, style: 'min-height: 100px' %>
+				</div>
+				<div class="form-inputs" style="margin-top: 15px">
+					<%= f.button :submit %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>
+

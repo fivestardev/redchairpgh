@@ -71,5 +71,11 @@ class User < ApplicationRecord
     end
   end
 
+  def location 
+	  loc = [ city, " ", state, " ", zip ].join
+	  loc.strip!
+	  loc.blank? ? "N/A" : loc
+  end
+
 
 end

@@ -1,35 +1,39 @@
 <% if current_user.active.nil? or current_user.active != true %>
-  <div class="card">    
-    <div class="card-content">
-      <p>Almost there! Verify your information</p>
-      <%= simple_form_for(@user) do |f| %>
-        <%= f.error_notification %>
-        <div class="row">
-          <div class="form-inputs">
-            <%= f.input :first_name %> 
-            <%= f.input :last_name %> 
-            <%= f.input :email %>
-            <%= f.input :linkedin_url %> 
-            <%= f.input :location %> 
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <br>CODE OF CONDUCT</br>
-            <p>In order to maintain a healthy and safe mentorship environment,
-            all members must agree to all terms in the code of conduct.</p>
-            <p>Do you agree to follow these rules?</p>
-            <%= f.input :code_of_conduct%>
-            <%= f.hidden_field :active, value: false %>
-            <%= f.hidden_field :is_new, value: true %>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="form-actions col s7">
-            <%= f.button :submit, :value => "Create Account"%>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
+	<div class="card">    
+		<div class="card-content">
+			<h4 style="text-align: center">Almost there! Verify your information</h4>
+			<%= simple_form_for(@user) do |f| %>
+			<%= f.error_notification %>
+			<div class="row">
+				<div class="form-inputs">
+					<%= f.input :first_name %>
+					<%= f.input :last_name %>
+					<%= f.input :email %>
+					<%= f.input :linkedin_url %> 
+					<%= f.input :city %> 
+					<%= f.input :state %> 
+					<%= f.input :zip %> 
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-inputs">
+					<br>CODE OF CONDUCT</br>
+					<p>In order to maintain a healthy and safe mentorship environment,
+					all members must agree to all terms in the code of conduct.</p>
+					<p>Do you agree to follow these rules?</p>
+					<%= f.input :code_of_conduct%>
+					<%= f.hidden_field :active, value: false %>
+					<%= f.hidden_field :is_new, value: true %>
+				</div>
+		  	</div>
+			<div class="row">
+			  <div class="form-actions col s7">
+				<%= f.button :submit, :value => "Create Account"%>
+			  </div>
+			</div>
+		  <% end %>
+		</div>
+	</div>
 <% else %>
   redirect_to home_path 
 <% end %>

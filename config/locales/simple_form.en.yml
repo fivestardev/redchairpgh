@@ -1,0 +1,13 @@
+en:
+    simple_form:
+        placeholders:
+            defaults:
+                gender: Gender
+            user:
+                first_name: First Name
+                last_name: Last Name
+                email: Email Address
+                linkedin_url: LinkedIn URL
+                city: City
+                state: State
+                zip: Zip Code

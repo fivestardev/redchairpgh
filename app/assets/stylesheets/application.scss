@@ -18,3 +18,17 @@
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import "https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700";
 @import "https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700";
+
+.fx-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
+
+.fx-item {
+	flex: 0 0 40%;
+}
+
+.fx-label {
+	font-size: 1.2em;
+}

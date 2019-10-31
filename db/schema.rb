@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190502160551) do
+ActiveRecord::Schema.define(version: 20191007194923) do
 
   create_table "mentees", force: :cascade do |t|
     t.boolean "is_active"
@@ -80,6 +80,9 @@ ActiveRecord::Schema.define(version: 20190502160551) do
     t.string "password_digest"
     t.string "username"
     t.string "email"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
   end
 
 end

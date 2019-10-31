@@ -14,7 +14,7 @@ SimpleForm.setup do |config|
     b.optional :min_max
     b.optional :readonly
     b.use :input
-    b.use :label
+    # b.use :label
     b.use :error, wrap_with: { tag: 'small', class: 'error-block red-text text-darken-1' }
     b.use :hint,  wrap_with: { tag: 'span', class: 'help-block' }
   end
@@ -27,7 +27,7 @@ SimpleForm.setup do |config|
     b.optional :min_max
     b.optional :readonly
     b.use :input, class: 'materialize-textarea' 
-    b.use :label
+    # b.use :label
     b.use :error, wrap_with: { tag: 'small', class: 'error-block red-text text-darken-1' }
     b.use :hint,  wrap_with: { tag: 'span', class: 'help-block' }
   end
@@ -37,16 +37,18 @@ SimpleForm.setup do |config|
     b.optional :readonly
 
     b.use :input
-    b.use :label
+    # b.use :label
+    b.use :placeholder
     b.use :error, wrap_with: { tag: 'small', class: 'error-block red-text text-darken-1' }
     b.use :hint,  wrap_with: { tag: 'span', class: 'help-block' }
   end
 
   config.wrappers :materialize_toggle, tag: 'p', class: 'col s9 switch', error_class: 'has-error' do |b|
     b.use :html5
+    b.use :placeholder
     b.optional :readonly
 
-    b.use :label
+    # b.use :label
     b.wrapper tag: 'label' do |ba| 
       ba.use :input
       ba.use :tag, tag: 'span', class: 'lever'
@@ -59,7 +61,8 @@ SimpleForm.setup do |config|
   config.wrappers :materialize_radio_and_checkboxes, tag: 'div', class: 'col s9', error_class: 'has-error' do |b|
     b.use :html5
     b.optional :readonly
-    b.use :label
+    b.use :placeholder
+    # b.use :label
     b.use :input
     b.use :error, wrap_with: { tag: 'small', class: 'error-block red-text text-darken-1' }
     b.use :hint,  wrap_with: { tag: 'span', class: 'help-block' }
@@ -67,6 +70,7 @@ SimpleForm.setup do |config|
 
   config.wrappers :materialize_file_input, tag: 'div', class: 'file-field input-field col s9', error_class: 'has-error' do |b|
     b.use :html5
+    b.use :placeholder
 
     b.wrapper tag: :div, class: 'btn' do |ba| 
       ba.use :tag, tag: :span, text: :label_text

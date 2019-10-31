@@ -1,43 +1,4 @@
 <div class="page-header">
     <p>Creating Mentee Profile</p>
 </div>
-
-<!--<%# render 'form', mentee: @mentee %>-->
-
-<!--<%# link_to 'Back', mentees_path %>-->
-
-<div class="card">    
-  <div class="card-content">
-    <%= simple_form_for(@mentee) do |f| %>
-      <%= f.error_notification %>
-      <div class="row">
-        <div class="form-inputs">
-          
-          <%= f.input :current_role, collection: Mentee::CURR_ROLE, include_blank: true, :label => '1. What is your current role (select one)?', type: "text" %>
-           <%= f.input :skill_1, collection: Mentee::IMPACT , include_blank: true, :label => '2. In what area, do you most want mentor support?' %>
-            <%= f.input :skill_2, collection: Mentee::IMPACT, include_blank: true, :label => '3. What is the 2nd most important area for which you want mentor support?' %>
-             <%= f.input :skill_3, collection: Mentee::IMPACT, include_blank: true, :label => '4. What is the 3rd most important area for which you want mentor support?' %>
-          <%= f.input :mentor_role, collection: Mentee::MENTOR_ROLES, include_blank: true, :label => '5. What adjective best describes the role you would like your mentor to play (choose one)? A mentor acts as a: ' %>
-          <%= f.input :mentor_gender, collection: Mentee::GENDER, include_blank: true, :label => '6. I prefer a mentor who identifies as (select all that apply or no preference):' %>
-          <%= f.input :comm_frequency, collection: Mentee::COMMUNICATION_FREQ, include_blank: true, :label => '7. How frequently would you like to communicate with a mentor?' %>
-          <%= f.input :years_in_field, :label => '8. Years of experience in your field' %>
-          <%= f.input :lead_team, :label => '9. Do you currently supervise/lead a team or group?' %>
-          <%= f.hidden_field :is_active, value: true %>
-          <%= f.hidden_field :user_id, value: current_user.id %>
-          
-          <!--non requesting algorithm fields-->          
-          <%= f.input :in_five_years, text_field_tag: { class: 'active' }, :label => '10. Where do you see yourself in your career in five years?' %>
-          <%= f.input :bio, text_field_tag: { class: 'active' }, :label => '11. Please provide a short bio of your interests, hobbies, and core values outside of your professional environment. ' %>
-
-          <div class="form-actions col s7">
-            <%= f.button :submit %>
-          </div>
-
-
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<% end %>
+<%= render partial: "decent_form", locals: {mentee: @mentee} %>

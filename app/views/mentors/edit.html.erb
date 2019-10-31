@@ -1,11 +1,7 @@
-<div class="imgimg">
-<%= image_tag("bg.jpg", :alt => "rss feed")%>
-</div>
 <h1>Editing Mentor Profile</h1>
 
-<%= render 'form', mentor: @mentor %>
+<%= render 'decent_form', mentor: @mentor %>
 
-<%= link_to 'Show', @mentor %> 
 <% if current_user.role? :admin %>
     <%= link_to 'Back', mentors_path %>
 <% end %>

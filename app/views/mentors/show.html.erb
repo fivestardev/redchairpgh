@@ -12,6 +12,7 @@
           <p><b>Mentor Profile</b></p>
         </div>
         <br>
+		  <%= User.find(@mentor.user_id).image_url %>
         <% unless User.find(@mentor.user_id).image_url.nil? %> 
           <p><%= image_tag User.find(@mentor.user_id).image_url, :class => "round", :size => "180x180" %> </p>
         <% end %>

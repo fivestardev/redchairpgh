@@ -1,44 +1,64 @@
 <% if @user.is_new %>
-  <h1>Verifying Account</h1>
+	<h1>Verifying Account</h1>
 <% else %>
-  <h1>Editing Account</h1>
+	<h1>Editing Account</h1>
 <% end %>
+
 <div class="card">    
     <div class="card-content">
-      <%= simple_form_for(@user) do |f| %>
-        <%= f.error_notification %>
-        <div class="row">
-          <div class="form-inputs">
-            <label for="first_name">First Name</label>
-            <%= f.input_field :first_name%> 
-            <label for="last_name">Last Name</label>
-            <%= f.input_field :last_name, label: "" %> 
-            <label for="email">Email</label>
-            <%= f.input_field :email %>
-            <label for="linkedin">LinkedIn URL</label>
-            <%= f.input_field :linkedin_url %>
-            <label for="Loction">City, State, Zip Code</label>
- 
-            <%= f.input_field :location %> 
-            <% if @user.code_of_conduct == false %>
-                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    	<%= simple_form_for(@user) do |f| %>
+        	<%= f.error_notification %>
+				<div class="row">
+					<div class="col s6">
+						<label for="first_name">First Name</label>
+						<%= f.input_field :first_name %> 
+					</div>
+					<div class="col s6">
+						<label for="last_name">Last Name</label>
+						<%= f.input_field :last_name, label: "what" %> 
+					</div>
+					<div class="col s6">
+						<label for="email">Email</label>
+						<%= f.input_field :email, label: "what" %>
+					</div>
 
-              <br>CODE OF CONDUCT</br>
-              <p>In order to maintain a healthy and safe mentorship environment,
-              all members must agree to all terms in the code of conduct.</p>
-              <p>Do you agree to follow these rules?</p>
-              <%= f.input :code_of_conduct%>
-            <% end %>
-            <%= f.hidden_field :active, value: true %>
-            <%#= f.hidden_field :is_new, value: false %>
-          </div>
-        </div>
+					<div class="col s6">
+						<label for="linkedin">LinkedIn URL</label>
+						<%= f.input_field :linkedin_url %>
+					</div>
 
-        <div class="row">
-          <div class="form-actions col s7">
-            <%= f.button :submit, :value => "Create Account"%>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
+					<div class="col s6">
+						<label for="Loction">City</label>
+						<%= f.input_field :city %> 
+					</div>
+
+					<div class="col s6">
+						<label for="Loction">State</label>
+						<%= f.input_field :state %> 
+					</div>
+
+					<div class="col s6">
+						<label for="Loction">Zip Code</label>
+						<%= f.input_field :zip %> 
+					</div>
+				</div>
+				<div class=row">
+
+					<% if @user.code_of_conduct == false %>
+								<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+					  <br>CODE OF CONDUCT</br>
+					  <p>In order to maintain a healthy and safe mentorship environment,
+					  all members must agree to all terms in the code of conduct.</p>
+					  <p>Do you agree to follow these rules?</p>
+					  <%= f.input :code_of_conduct%>
+					<% end %>
+					<%= f.hidden_field :active, value: true %>
+					<%#= f.hidden_field :is_new, value: false %>
+				</div>
+				<div class="row form-inputs">
+					<%= f.button :submit, :value => "Update Account"%>
+				</div>
+      	<% end %>
+	</div>
+</div>

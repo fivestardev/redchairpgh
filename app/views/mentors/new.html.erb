@@ -1,47 +1,4 @@
 <div class="page-header">
-    <p>Creating Mentor Profile </p>
+	<p>Creating Mentor Profile</p>
 </div>
-
-<div class="card">    
-  <div class="card-content">
-    <%= simple_form_for(@mentor) do |f| %>
-      <%= f.error_notification %>
-      <div class="row">
-        <div class="form-inputs">
-          
-          
-          <%# f.input :role, collection: Mentor::ROLE, include_blank: true %>
-          <!--matching algo feilds -->          
-           <div id="skills">
-            <%= f.input :specialized_skills, :as => :check_boxes, collection: Mentor::IMPACT, :label => '1. What areas do you most want to support (choose your top 6) -- where you think your experience can most impact your mentee? ' %>
-          </div>
-          </br></br>
-          <%= f.input :current_role, :as => :check_boxes, collection: Mentor::BACKGROUND, :label => '2. What is your background?  Check all that apply.' %>
-          </br>
-          <%= f.input :mentor_roles, :as => :check_boxes, collection: Mentor::MENTOR_ROLES, :label => '3. What adjective best describes the role you would like to play as a mentor (choose all that apply)? '  %>
-          
-          <%= f.input :gender, collection: Mentor::GENDER, include_blank: true, :label => 'I identify as: ', label_html: { class: 'form_labels' }  %>
-          
-          <%= f.input :comm_frequency, collection: Mentor::COMMUNICATION_FREQ, include_blank: true, :label => '4. How frequently would you like to communicate with a mentee? ', label_html: { class: 'form_labels' }  %>
-          <%# f.input :impact, experience: Mentor::EXPERIENCE, include_blank: true %>
-          
-          <%= f.input :years_in_field, :label => '5. Years of experience in your field', label_html: { class: 'form_labels' }  %>
-          
-          <%= f.input :years_in_lead, :label => '6. Years as a leader/supervisor', label_html: { class: 'form_labels' }  %>
-          <%= f.hidden_field :is_active, value: true %>
-          <%= f.hidden_field :user_id, value: current_user.id %>
-
-          <!--non matching algorithm fields-->          
-          <%= f.input :motivation, text_field_tag: { class: 'active' }, :label => '7. What motivates you to want to mentor? (limited text field)', label_html: { class: 'form_labels' }  %>
-          <%= f.input :bio, text_field_tag: { class: 'active' }, :label => '8. Please provide a short bio of your interests, hobbies, and core values outside of your professional environment. ' , label_html: { class: 'form_labels' } %>
-
-          <div class="form-actions col s7">
-            <%= f.button :submit, button_html: { class: 'btn-large' }%>
-          </div>
-
-
-      </div>
-    </div>
-  </div>
-</div>
-<% end %>
+<%= render partial: "decent_form", locals: {mentor: @mentor} %>

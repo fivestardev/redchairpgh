@@ -1,8 +1,7 @@
 <h1>Editing Mentees Profile</h1>
 
-<%= render 'form', mentee: @mentee %>
+<%= render 'decent_form', mentee: @mentee %>
 
-<%= link_to 'Show', @mentee %> 
 <% if current_user.role? :admin %>
     <%= link_to 'Back', mentees_path %>
 <% end %>

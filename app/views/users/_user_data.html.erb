@@ -45,12 +45,10 @@
               <% end %></td>
         </tr>
         <tr>
-          <td><b>Location: </b></td>
-          <td><% if !@user.location.blank? %>
-                <%= @user.location %><br/>
-              <% else %>
-                <%= "N/A" %><br/>
-              <% end %></td>
+          <td><b>Location : </b></td>
+		  <td>
+			<%= @user.location %>
+		  </td>
         </tr>
       </tbody>
     </table>

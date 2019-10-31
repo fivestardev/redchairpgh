@@ -196,8 +196,28 @@ th.align_center {
 
 /********** FORMS ********/
 
+::-webkit-input-placeholder {
+	color: #000000DD;
+	font-size: .8em;
+}
+
+::-moz-placeholder {
+	color: #000000DD;
+	font-size: .8em;
+}
+
+:-ms-input-placeholder {
+	color: #000000DD;
+	font-size: .8em;
+}
+
 .form-inputs {
   text-align: center; 
+  color: #000000;
+}
+
+.form-inputs label {
+	color: #000000;
 }
 
 .form_labels {
