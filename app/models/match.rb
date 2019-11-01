@@ -1,6 +1,7 @@
 class Match
 
     def initialize(mentee) 
+		puts "WE MATCHIN OVER HERE"
         @mentors = match(mentee)
     end 
 
