@@ -69,11 +69,8 @@ class MentorshipsController < ApplicationController
         
         if @mentorship.status == 'pending'
             @mentorship.update_attributes(:status => 'active')
-			puts("CALLING MAILER")
 			MentorshipMailer.with(mentor: mentor, mentee: mentee).acceptance_email_to_mentee.deliver!
 			MentorshipMailer.with(mentor: mentor, mentee: mentee).acceptance_email_to_mentor.deliver!
-			puts("CALLED MAILER")
-            #@mentorship.save! 
             flash[:notice] = 'Mentorship approved!' 
         elsif @mentorship.status == 'active'
             @mentorship.update_attributes(:status => 'removed')
