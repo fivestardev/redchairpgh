@@ -42,16 +42,19 @@ class Mentor < ApplicationRecord
 	end
 
 	def hackimpact
+		if specialized_skills.nil? then return false end
 		i = (inithacks(IMPACT)[IMPACT] += 1);
 		specialized_skills.include? IMPACT[i][0]
 	end
 
 	def hackbackground 
+		if current_role.nil? then return false end
 		i = (inithacks(BACKGROUND)[BACKGROUND] += 1);
 		current_role.include? BACKGROUND[i][0]
 	end
 
 	def hackrole
+		if mentor_roles.nil? then return false end
 		i = (inithacks(MENTOR_ROLES)[MENTOR_ROLES] += 1);
 		mentor_roles.include? MENTOR_ROLES[i][0]
 	end
