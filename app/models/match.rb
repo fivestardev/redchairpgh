@@ -1,7 +1,6 @@
 class Match
 
     def initialize(mentee) 
-		puts "WE MATCHIN OVER HERE"
         @mentors = match(mentee)
     end 
 
@@ -43,8 +42,12 @@ class Match
     	mentor_list = Mentor.all
     	#create array to hold filtered down mentors
     	acceptable = []
+		puts "############### mentor"
+		puts mentor_list.inspect
+		puts "############### mentee"
+		puts mentee.inspect
     	mentor_list.each do |mentor|
-    		if (mentee.mentor_gender == 'As needed' || mentee.mentor_gender == mentor.gender)
+    		if (mentee.mentor_gender == 'No preference' || mentee.mentor_gender == mentor.gender)
     			if (mentor.mentor_roles.include? mentee.mentor_role) && !(mentee.connections.include? mentor.id)
                     if (mentor.is_valid && mentee.user_id != mentor.user_id)
     				    if frequency(mentee, mentor) == true

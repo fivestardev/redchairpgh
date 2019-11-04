@@ -1,4 +1,11 @@
 class Mentee < ApplicationRecord
+
+	validates :mentor_role, presence: true
+	validates :mentor_gender, presence: true
+	validates :comm_frequency, presence: true
+	validates :skill_1, presence: true
+	validates :skill_2, presence: true
+	validates :skill_3, presence: true
     
 	# Relationships
 	belongs_to :user

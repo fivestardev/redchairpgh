@@ -1,4 +1,10 @@
 class Mentor < ApplicationRecord
+
+	validates :specialized_skills, length: { minimum: 2 }
+	validates :mentor_roles, length: { minimum: 2 }
+	validates :current_role, length: { minimum: 2 }
+	validates :gender, presence: true
+	validates :comm_frequency, presence: true
     
 	# Relationships
 	belongs_to :user

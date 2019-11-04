@@ -6,20 +6,29 @@
 				<div class="row">
 					<!--matching algo feilds -->          
 					<div class="col s8">
-						<div class="fx-label">In what areas can you provide support? (choose top 6)</div>
+						<div class="fx-label">
+							<span class="required-mark">*</span>
+							In what areas can you provide support? (choose top 6)
+						</div>
 						<br />
 						<%= f.input_field :hackimpact, :as => :check_boxes, collection: Mentor::IMPACT %>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col s6">
-						<div class="fx-label">What is your background?</div>
+						<div class="fx-label">
+							<span class="required-mark">*</span>
+							What is your background?
+						</div>
 						<br />
 						<%= f.input_field :hackbackground, :as => :check_boxes, collection: Mentor::BACKGROUND %>
 					</div>
 
 					<div class="col s6">
-						<div class="fx-label">What adjective best describes the kind of mentor you'd be?</div>
+						<div class="fx-label">
+							<span class="required-mark">*</span>
+							What adjective best describes the kind of mentor you'd be?
+						</div>
 						<br />
 						<%= f.input_field :hackrole, :as => :check_boxes, collection: Mentor::MENTOR_ROLES %>
 					</div>
@@ -30,11 +39,17 @@
 
 				<div class="row">
 					<div class='col s6'>
-						<div class="fx-label">Gender</div>
+						<div class="fx-label">
+							<span class="required-mark">*</span>
+							Gender
+						</div>
 						<div><%= f.input_field :gender, collection: Mentor::GENDER, include_blank: true %></div>
 					</div>
 					<div class='col s6'>
-						<div class="fx-label">Desired Communication Frequency</div>
+						<div class="fx-label">
+							<span class="required-mark">*</span>
+							Desired Communication Frequency
+						</div>
 						<%= f.input_field :comm_frequency, collection: Mentor::COMMUNICATION_FREQ, include_blank: true %>
 					</div>
 				</div>

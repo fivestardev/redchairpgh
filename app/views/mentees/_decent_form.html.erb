@@ -9,15 +9,24 @@
 
 			<div class="row">
 					<div class="col s4">
-						<div class="fx-label">Acts as a</div>
+						<div class="fx-label">
+							<span class="required-mark">*</span>
+							Acts as a
+						</div>
 						<%= f.input_field :mentor_role, collection: Mentee::MENTOR_ROLES, include_blank: true %>
 					</div>
 					<div class="col s4">
-						<div class="fx-label">Identifies as</div>
+						<div class="fx-label">
+							<span class="required-mark">*</span>
+							Identifies as
+						</div>
 						<%= f.input_field :mentor_gender, collection: Mentee::GENDER, include_blank: true %>
 					</div>
 					<div class="col s4">
-						<div class="fx-label">And communicates</div>
+						<div class="fx-label">
+							<span class="required-mark">*</span>
+							And communicates
+						</div>
 						<%= f.input_field :comm_frequency, collection: Mentee::COMMUNICATION_FREQ, include_blank: true %>
 					</div>
 			</div>
@@ -40,15 +49,24 @@
 					<%= f.input :lead_team %>
 				</div>
 				<div class="col s6">
-					<div class="fx-label">Most important area of support:</div>
+					<div class="fx-label">
+						<span class="required-mark">*</span>
+						Most important area of support:
+					</div>
 					<%= f.input_field :skill_1, collection: Mentee::IMPACT, include_blank: true %>
 				</div>
 				<div class="col s6">
-					<div class="fx-label">Second most important area of support:</div>
+					<div class="fx-label">
+						<span class="required-mark">*</span>
+						Second most important area of support:
+					</div>
 					<%= f.input_field :skill_2, collection: Mentee::IMPACT, include_blank: true %>
 				</div>
 				<div class="col s6">
-					<div class="fx-label">Third most important area of support:</div>
+					<div class="fx-label">
+						<span class="required-mark">*</span>
+						Third most important area of support:
+					</div>
 					<%= f.input_field :skill_3, collection: Mentee::IMPACT, include_blank: true %>
 				</div>
 			</div>
