@@ -147,9 +147,6 @@
     <%= link_to 'Edit', edit_mentee_path(@mentee),:class => "waves-effect waves-light btn" %> 
   <% end %>
 <% end %>
-  </div>
-  </div>
-  </div>
   
 <% if @user.is_mentor? %> 
 <% @mentor = Mentor.for_user(@user.id).first %> 
