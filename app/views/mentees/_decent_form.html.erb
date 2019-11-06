@@ -88,7 +88,9 @@
 					<%= f.input_field :bio, style: 'min-height: 100px' %>
 				</div>
 				<div class="form-inputs" style="margin-top: 15px">
-					<%= f.button :submit %>
+					<%= f.button :submit,
+						(mentee.id.nil? ? "Create" : "Update") + " Mentee Profile"
+					%>
 				</div>
 			</div>
 		<% end %>

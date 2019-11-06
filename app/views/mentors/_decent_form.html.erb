@@ -78,7 +78,9 @@
 					</div>
 				</div>
 				<div class="form-actions col s6">
-					<%= f.button :submit, button_html: { class: 'btn-large' }%>
+					<%= f.button :submit, 
+						(mentor.id.nil? ? "Create" : "Update") + " Mentor Profile", 
+						button_html: { class: 'btn-large' }%>
 				</div>
 			</div>
 		<% end %>
