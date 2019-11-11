@@ -43,7 +43,7 @@ SimpleForm.setup do |config|
     b.use :hint,  wrap_with: { tag: 'span', class: 'help-block' }
   end
 
-  config.wrappers :materialize_toggle, tag: 'p', class: 'col s9 switch', error_class: 'has-error' do |b|
+  config.wrappers :materialize_toggle, tag: 'span', class: 'switch', error_class: 'has-error' do |b|
     b.use :html5
     b.use :placeholder
     b.optional :readonly
