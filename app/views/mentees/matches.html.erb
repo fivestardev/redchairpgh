@@ -15,7 +15,7 @@
     <% new_matches = pending_mentors - match_ids %> 
 <% end %>
 <% if !Mentorship.for_mentee(@mentee).empty? %>
-    <% mentorships = Mentorship.for_mentee(@mentee).all %> 
+	<% mentorships = Mentorship.for_mentee(@mentee).all.map { |m| m.mentor_id } %> 
     <% new_matches = mentorships - pending_mentors - match_ids %>
 <% end %>
 
