@@ -10,7 +10,7 @@ fi
 
 AWS_USR="ec2-user"
 AWS_PEM="${RCPGH_ROOT}/util/env/fivestardev.pem"
-AWS_DNS="ec2-52-90-229-189.compute-1.amazonaws.com"
+AWS_DNS="ec2-34-237-5-112.compute-1.amazonaws.com"
 AWS_PROD_DB_PATH="/var/app/current/db/production.sqlite3"
 
 TARGET_PATH=$1
