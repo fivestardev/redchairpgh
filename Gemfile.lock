@@ -120,7 +120,7 @@ GEM
       oauth2 (~> 1.1)
       omniauth (~> 1.9)
     public_suffix (3.0.3)
-    puma (3.12.1)
+    puma (3.12.4)
     rack (2.0.6)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -220,7 +220,7 @@ DEPENDENCIES
   materialize-form (= 1.0.8)
   materialize-sass (= 0.100.2)
   omniauth-linkedin-oauth2
-  puma (~> 3.7)
+  puma (~> 3.12)
   rails (~> 5.1.6)
   sass-rails (~> 5.0)
   selenium-webdriver
